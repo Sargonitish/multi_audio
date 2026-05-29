@@ -1,79 +1,67 @@
-# 🎧 Live Bluetooth Audio Sync
+# 🎧 Live Bluetooth Audio Sync Pro
 
-A Python application that captures live system audio and streams it simultaneously to multiple Bluetooth headphones or audio devices in real time.
+A modern Python desktop application that streams live system audio to multiple Bluetooth headphones and audio devices simultaneously.
 
-Built using:
+Built with:
 
-* `tkinter` for the graphical interface
-* `sounddevice` for real-time audio streaming
-* `threading` for multi-device synchronization
-
----
-
-## 🚀 Features
-
-* 🎵 Capture live system audio using:
-
-  * Virtual Audio Cable
-  * Stereo Mix
-* 🔊 Stream audio to multiple Bluetooth headphones simultaneously
-* 🖥 Simple GUI built with Tkinter
-* ⚡ Real-time low-latency audio forwarding
-* 🎧 Multi-output support using threads
+* Python
+* CustomTkinter
+* SoundDevice
+* NumPy
+* Matplotlib
 
 ---
 
-## 📸 Preview
+# ✨ Features
 
-<img width="500" alt="app-preview" src="https://via.placeholder.com/500x300.png?text=Live+Bluetooth+Audio+Sync">
+✅ Stream live system audio
+✅ Multiple Bluetooth headphone support
+✅ Modern dark UI
+✅ Real-time audio visualizer
+✅ Individual volume control
+✅ Auto device refresh
+✅ Low-latency optimized playback
+✅ Professional desktop interface
 
 ---
 
-## 🛠 Requirements
+# 📸 Preview
 
-Install Python packages:
+<img width="900" alt="preview" src="https://via.placeholder.com/900x500.png?text=Live+Bluetooth+Audio+Sync+Pro">
+
+---
+
+# 🚀 Installation
+
+## 1️⃣ Clone Repository
 
 ```bash
-pip install sounddevice
+git clone https://github.com/your-username/live-bluetooth-audio-sync-pro.git
+cd live-bluetooth-audio-sync-pro
 ```
 
-Tkinter usually comes pre-installed with Python.
+---
+
+## 2️⃣ Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
-## 🔧 Windows Setup (Important)
+# 📦 requirements.txt
 
-To capture system audio, you need one of the following:
-
-### Option 1 — Virtual Audio Cable (Recommended)
-
-Install:
-
-* VB-CABLE Virtual Audio Device
-
-After installation:
-
-1. Set your system output to `CABLE Input`
-2. In the app select:
-
-   * `CABLE Output` / `Line 1`
-3. Select your Bluetooth headphones as outputs
+```txt
+customtkinter
+sounddevice
+numpy
+matplotlib
+```
 
 ---
 
-### Option 2 — Stereo Mix
-
-1. Open:
-
-   * Control Panel → Sound → Recording
-2. Enable:
-
-   * `Stereo Mix`
-3. Select it in the app as the input source
-
----
-
-## ▶ Running the App
+# ▶ Run Application
 
 ```bash
 python app.py
@@ -81,83 +69,169 @@ python app.py
 
 ---
 
-## 📋 How It Works
+# 🛠 Windows Setup (IMPORTANT)
 
-1. The app captures live audio from:
+To capture system audio correctly, use one of these:
 
-   * Virtual Cable OR Stereo Mix
-2. Creates a dedicated audio stream for every selected output device
-3. Uses threading to broadcast audio simultaneously
+## Option 1 — VB-CABLE (Recommended)
+
+Install:
+
+* VB-CABLE Virtual Audio Device
+
+After installation:
+
+1. Set Windows output to:
+
+   * `CABLE Input`
+2. In the app select:
+
+   * `CABLE Output`
+3. Select Bluetooth devices
+4. Start streaming
 
 ---
 
-## 🧠 Technologies Used
+## Option 2 — Stereo Mix
+
+1. Open:
+
+   * Control Panel → Sound
+2. Recording Tab
+3. Enable:
+
+   * Stereo Mix
+4. Select it inside the app
+
+---
+
+# 🎧 How It Works
+
+The app:
+
+1. Captures live system audio
+2. Buffers audio using NumPy
+3. Streams audio to multiple devices simultaneously
+4. Uses threading for independent Bluetooth outputs
+5. Visualizes audio in real time
+
+---
+
+# ⚡ Performance Notes
+
+Bluetooth streaming has hardware limitations.
+
+For best performance:
+
+* Use Bluetooth 5.0+
+* Use same headphone models
+* Close heavy apps during streaming
+* Disable Windows Audio Enhancements
+* Use maximum 2–3 devices for stable playback
+
+---
+
+# 🖥 Technologies Used
 
 * Python
-* Tkinter
+* CustomTkinter
 * SoundDevice
+* NumPy
+* Matplotlib
 * Threading
 
 ---
 
-## ⚠ Known Limitations
-
-* Bluetooth devices may have slight latency differences
-* Works best on Windows
-* Audio quality depends on device drivers
-* Some devices may not support simultaneous playback
-
----
-
-## 📁 Project Structure
+# 📂 Project Structure
 
 ```text
-live-bluetooth-audio-sync/
+live-bluetooth-audio-sync-pro/
 │
 ├── app.py
+├── requirements.txt
+├── profiles.json
 ├── README.md
-└── requirements.txt
+│
+├── dist/
+├── build/
+└── installer/
 ```
 
 ---
 
-## 📦 requirements.txt
+# 🔥 Future Improvements
 
-```txt
-sounddevice
+* WiFi audio streaming
+* Mobile companion app
+* AI noise suppression
+* WASAPI low-latency engine
+* System tray support
+* Audio recording
+* Per-device delay compensation
+* OBS integration
+* Auto reconnect devices
+
+---
+
+# 📦 Build EXE
+
+Install PyInstaller:
+
+```bash
+pip install pyinstaller
+```
+
+Build executable:
+
+```bash
+pyinstaller --onefile --windowed --collect-all customtkinter --hidden-import sounddevice --hidden-import matplotlib app.py
+```
+
+Generated EXE:
+
+```text
+dist/app.exe
 ```
 
 ---
 
-## 💡 Future Improvements
+# 🛠 Build Installer
 
-* Device latency compensation
-* Volume controls per device
-* Auto reconnect
-* Better audio buffering
-* Dark mode UI
+Recommended:
+
+* Inno Setup
+
+Official Website:
+https://jrsoftware.org/isinfo.php
 
 ---
 
-## 🤝 Contributing
+# 🤝 Contributing
 
 Pull requests are welcome.
 
 For major changes:
 
 1. Fork the repository
-2. Create a new branch
-3. Commit your changes
+2. Create a feature branch
+3. Commit changes
 4. Open a pull request
 
 ---
 
-## 📜 License
+# 📜 License
 
 MIT License
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you like this project, give it a star on GitHub ⭐
+If you like this project:
+⭐ Star the repository on GitHub
+
+---
+
+# 👨‍💻 Author
+
+Developed with Python and Bluetooth audio streaming technologies.
